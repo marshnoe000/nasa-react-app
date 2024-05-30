@@ -19,7 +19,6 @@ function App() {
       const today = (new Date().toDateString())
       const localKey = `NASA-${today}`
       if(localStorage.getItem(localKey)) {
-        console.log(`got this from cache ${localStorage.getItem(localKey)}`)
         const apiData = JSON.parse(localStorage.getItem(localKey))
         setData(apiData)
         return
@@ -38,7 +37,7 @@ function App() {
       }
     }
     fetchAPIData()
-  },)
+  },[])
 
   return (
     <>
